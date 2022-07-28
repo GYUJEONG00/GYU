@@ -1,0 +1,53 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                      
+        <title>05_이미지.html</title>
+    </head> 
+    <body>     
+        <!--
+            이미지(.jpg .gif .png) 추가
+            <img src=" 경로명+파일명 ">
+                ->오래된 태그라  br처럼 닫는 태그가 없음
+
+            컴퓨터 경로
+            1) 상대 경로 : 현재 문서가 저장된 폴더를 기준으로
+               학원컴퓨터에서는 /frontend/html/경로기준
+                    images/     : 현재폴더 안 하위폴더 images
+                    ./images/   : 현재폴더 안 하위폴더 images
+                    ../images/  : 현재폴더의 상위폴더 images
+                    ../../images: 현재폴더의 상위의 상위폴더 images
+
+            2) 절대 경로 : 서버경로. URL상에 나와있는 프로토콜과 함께 봐야함
+                웹프로젝트 만든다 가정시, 홈 디렉토리(root)부터 시작하라는 의미    
+                https://www.w3schools.com/~
+        -->                 
+
+
+       
+        <img src="../images/angel.png">
+        <br><br><hr>
+        <img src="../images/b_apeach.png" width="150px" height="100px">
+        <br><br><hr>
+        <img src="../images/b_apeach.png" width="20%" height="20%">
+        <br><br><hr>
+        <img src="../images/b_apeach.png" width="150" > <!--웹에서는 가로를 기준으로 사진 사이즈 조절-->
+        <br><br><hr>
+       
+
+        <!-- 쓰지말란 표시니 알아만 두기 -->
+        <img src="../images/appleRed.png" border="2px">
+        <br><br><hr>
+        <img src="../images/appleRed.png" border="0">
+        <br><br><hr>
+
+        <!--링크 연습용
+        <a href="01_html기본문법.html" target="_parent">Visit W3Schools!</a><br>
+        -->
+
+        
+        
+
+
+    </body>
+</html>    

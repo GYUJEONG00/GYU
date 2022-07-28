@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                      
+        <title>12_form.html</title>
+    </head> 
+    <body>                      
+        <!--
+            form 입력양식
+            사용자들이 값을 입력할 수 있도록 해줌
+            참조 : https://www.w3schools.com/html/html_form_input_types.asp
+        
+            용어정리
+            요소, element             : <table> <img> <a> <audio>
+
+            속성, property, attribute : width, height, border, src 
+            -->
+            
+            <!--
+            [다양한 폼 컨트롤 요소]
+            1. <input> 요소 -->
+            <input type="button">
+            <br><hr>
+            <input type="button" value="로그인"> 
+            <input type="button" value="검색">
+            <input type="button" value="등록">
+            <input type="button" value="입실">
+            <br><hr>
+
+            <input type="submit" value="전송"> <!--사용자가 입력한 정보를 서버로 전송-->
+            <input type="reset" value="주소">  <!--사용자가 입력한 정보를 취소(원래대로 복귀)-->
+            <br><hr>
+
+            <button>회원가입</button> <!--여닫는 태그가 있으면 그 사이에 value값 적음. type button과 submit의 기능 혼재-->
+            <br><hr>
+            
+            단일선택<input type="radio"> &nbsp;
+            다중선택<input type="checkbox">
+            <br><hr>
+
+
+            <!-- 참조 : https://dhlottery.co.kr/user.do?method=login&returnUrl= -->
+            <h3>로그인</h3> 
+            <form> <!--사용자가 입력한 정보는 <form>단위로 서버로 전송됨. -->
+                <table border="1"> 
+                    <tr>
+                        <th>아이디</th>
+                        <td><input type="text"></td>
+                        <td rowspan="2">
+                            <input type="submit" value="로그인">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="checkbox">ID저장
+                            <input type="button" value="회원가입">
+                            <input type="button" value="아아디/비번찾기">
+                        </td>
+                </table>
+            </form>
+            <br><hr>
+
+            <!--주의사항 
+
+                -잘못된 경우-
+                <form>
+                    <form></form>
+                </form>
+            
+                -잘된 경우-
+                <form></form>
+                <form></form>
+            -->
+            
+            <h3>회원가입</h3>
+            <!--id,name은 식별자 //한글은 value용 언어, 식별자에 사용못함 -->
+            <!--
+                id="javascript나 jQuery접근시 주로 사용"  cf.#기능
+                name="backend단에서 접근시 주로 사용"  
+                
+                보통 form의 id,name이름 똑같이 줌 
+            -->
+            <form id="memfrm" name="memfrm"> 
+                이름 : 
+                <input type="text" autofocus>
+                <!--명령어 호출 단축키 : ctrl + space // autofocus는 옵션임-->
+            <hr>
+                아이디 : 
+                <input type="text"
+                        id="userid"
+                        name="userid">
+            </form>
+            <br><hr>
+
+
+
+
+
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox">ID저장
+                    </td>
+                </tr>
+                <tr>
+                    <td> &nbsp;&nbsp;</td>
+                    <td> &nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="회원가입">
+                    </td>
+                    <td>
+                        <input type="button" value="아이디/비번찾기">
+                    </td>
+                </tr>
+            </table>
+            
+            
+           
+        
+
+        
+
+    </body>
+</html>    
+
+

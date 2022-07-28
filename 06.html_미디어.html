@@ -1,0 +1,35 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                      
+        <title>06_미디어.html</title>
+    </head> 
+    <body>     
+        <!--동영상 .mp4 .mp3 .avi .ram-->
+        
+        <!-- 1) Old version 비추천   <embed src="경로명+파일명">
+
+             2)HTML5 vsersion 오디오와 비디오 구별  -->
+
+        <img src="../music/gangnamstyle.jpg">
+        <br>
+        <audio controls>
+            <source src="../music/gangnamstyle.mp3">
+        </audio>
+        <br><hr>
+
+        <!--비디오태그에서 controls는 재생플레이어 컨트롤러를 띄어줌-->
+        <video width="350" height="300" poster="../music/crayonpop.jpg" controls >
+            <source src="../music/crayonpop.mp4">
+        </video>
+
+        <!--
+            <video src="video/cat.mp4" autoplay loop muted></video>
+            출처: https://rgy0409.tistory.com/4676 [친절한효자손 취미생활:티스토리]
+        -->
+        <video width="350" height="300" autoplay >
+            <source src="../music/crayonpop.mp4" type="video/mp4">
+        </video>
+
+    </body>
+</html>    
