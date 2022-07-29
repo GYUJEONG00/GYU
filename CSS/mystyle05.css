@@ -2,6 +2,7 @@
 /*mystyle05.css*/
 /*참조 : 05_다양한selector.html*/
 
+
 p {/*현재 문서의 모든 <p>요소를 다 찾아라*/
     font-family: 궁서체;
     font-size: 40px;
@@ -9,11 +10,13 @@ p {/*현재 문서의 모든 <p>요소를 다 찾아라*/
     font-style: italic;
 }
 
+
 /*부모<div>에 있는 <p>에만 적용하려고할때*/
 /*div_span_p 순으로 부모자식관계여도 먹힘*/
 /*div안에 들어간 모든 p태그*/
 div p {background-color: blanchedalmond;
 }
+
 
 /*부모자식 상관없이 모든 <h2>와 <p>태그를 찾아라*/
 h2, p {color: darkcyan;
@@ -21,6 +24,7 @@ h2, p {color: darkcyan;
 
 div h2{text-shadow: 2px 2px salmon;
 }
+
 
 /*참조 :https://www.w3schools.com/css/css_boxmodel.asp */
 #mybox {/*Bow Model*/
@@ -30,6 +34,7 @@ div h2{text-shadow: 2px 2px salmon;
     margin: auto;/*수평을 기준으로 가운데 정렬*/
 }
 
+
 /*부모 > 자식순으로 정렬*/
 div > span > p {
     text-decoration-line: line-through;
@@ -37,7 +42,26 @@ div > span > p {
 }
 
 
+/*해바라기 접근*/
+div > span > h2{
+    color: aqua;
+}
 
+#menu {
+    width: 100px;
+    height: 100px;
+    background: gray;
+}
+
+
+/*구조는 표시하되 사용자에게 안보이게하는것*/
+.hide {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
 
 
 
