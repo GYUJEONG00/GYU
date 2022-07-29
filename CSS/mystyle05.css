@@ -1,0 +1,51 @@
+@charset "UTF-8"; 
+/*mystyle05.css*/
+/*참조 : 05_다양한selector.html*/
+
+p {/*현재 문서의 모든 <p>요소를 다 찾아라*/
+    font-family: 궁서체;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*부모<div>에 있는 <p>에만 적용하려고할때*/
+/*div_span_p 순으로 부모자식관계여도 먹힘*/
+/*div안에 들어간 모든 p태그*/
+div p {background-color: blanchedalmond;
+}
+
+/*부모자식 상관없이 모든 <h2>와 <p>태그를 찾아라*/
+h2, p {color: darkcyan;
+}
+
+div h2{text-shadow: 2px 2px salmon;
+}
+
+/*참조 :https://www.w3schools.com/css/css_boxmodel.asp */
+#mybox {/*Bow Model*/
+    width: 320px;
+    padding: 10px;/*1개만 씀->상하좌우 모두 10px*/
+    border: 5px solid black;
+    margin: auto;/*수평을 기준으로 가운데 정렬*/
+}
+
+/*부모 > 자식순으로 정렬*/
+div > span > p {
+    text-decoration-line: line-through;
+    text-decoration-color: blue;
+}
+
+
+
+
+
+
+/*#category {
+    width: 320px;
+    padding: 10px;
+    border: 3px solid black;
+    margin: auto;
+    text-align: center;
+    color: black;
+}*/

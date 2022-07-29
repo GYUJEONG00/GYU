@@ -1,0 +1,30 @@
+@charset "UTF-8"; 
+/*
+문자 인코딩 UTF-8 (반드시 첫줄에 와야함)
+한글 표현에는 완성형, 조합형(UTF-8)이 있음
+UTF-8은 3바이트가 배당되고 중국어정도도 안꺠짐
+*/
+/*확장명css자체가 스타일만 올수있어서 <style>태그는 오류임*/
+
+/*mystyle.css*/
+/*https://www.w3schools.com/cssref/css_selectors.asp*/
+
+*   {
+    font-family: 궁서체;
+    font-size:  15px;
+    font-style: italic;
+    font-weight: bold;
+    }/*css->head태그 안에 쓰면됨*/
+
+    body{
+        background-color: beige;
+        margin: 0;/*바깥여백*/
+        padding: 0;/*안쪽여백,방향설정안함->4방향 전부*/
+    }
+
+    .line{border: 1px dotted gray;}
+
+    #mylayer{
+        width: 200px;
+        height : 200px;
+        background-color: aquamarine;}

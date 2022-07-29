@@ -1,0 +1,91 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                      
+        <title>13_form.html</title>
+    </head> 
+    <body>        
+
+        <!--참조 : https://www.w3schools.com/html/html_forms_attributes.asp -->
+        
+        <h3>1. 폼 관련 속성들</h3>              
+        <!--submit된 정보를 받는....백엔드에서 동작하는 언어 지정 가능
+            submit누르면 url에 ok.jsp볼 수 있음
+
+            클라이언트 <________>서버 
+             요청               응답
+
+             id=""          폼이름(주로 프론트엔드단에서 접근시 사용_id를 가르키는 단축키#이 있어서)
+             name=""        폼이름(주로 백엔드단에서 접근시 사용)
+             action=""      사용자가 입력요청한 정보를 서버측에서 받는 페이지명 or 명령어
+             method=""      전송방식_get방식 or post방식
+             enctype=""     파일 첨부하여 전송시 사용
+        -->
+
+        <form id="loginfrm" name="loginfrm" action="ok.jsp">
+            아이디 : <input type="text" name="userid"> <hr>
+            비밀번호 : <input type="password" name="userpw"> <hr>
+            <input type="submit" value="전송">
+        </form>
+        <hr>
+
+        <!--파일 첨부하여 전송시 폼에 enctype이라는 속성을 추가해야함. 안그러면 전송안됨-->
+        <form enctype="multipart/form-data">
+            첨부파일 : <input type="file">
+        </form>
+        <hr>
+
+        <h3>2. type=image </h3>
+        <form action="ok2.jsp">
+            <img src="../images/b_con.png" width="50%">
+            <hr>
+            <input type="image" src="../images/b_ryan.png" width="50%">
+            <!--<img src='' > + type=submit 기능, 검색창에서 검색아이콘같은곳에 쓰임 -->
+            <hr>
+
+            검색 : <input type="text" name="search">
+            <input type="image" src="../images/search.png">
+        </form>
+        <hr>
+
+        <h3>3. 다양한 input type</h3>
+        <!--참조 : https://www.w3schools.com/html/html_form_input_types.asp -->
+
+        <!--html페이지에서 노출되지는 않지만(사용자에게 노출안됨,개발자에게 필요한 값) form에 포함된 컨트롤 요소-->
+        <input type="hidden" id="page" name="page" value="3">
+        <input type="hidden" id="col" name="col" value="title">
+        <hr>
+
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+        <hr>
+
+        <input type="range" id="vol" name="vol" min="0" max="50">
+        <hr>
+
+        <input type="color">
+        <hr>
+
+        <input type="date">
+        <hr>
+
+        <input type="search">
+        <hr>
+
+        <input type="time">
+        <hr>
+
+        <input type="week">
+        <hr>
+
+        <input type="email"
+                placeholder="asdf@gmail.com">
+        <hr>
+
+        <input type="datetime-local">
+        <hr>
+
+        <h3>4. Label </h3>
+        <label for="user">이름 :</label><br> <!--for:user라는 이름을 찾아가라 -->
+        <input type="text" id="user"><br>
+    </body>
+</html>    
