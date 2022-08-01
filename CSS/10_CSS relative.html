@@ -1,0 +1,34 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                  
+        <title>10_relative.html</title>
+        <link rel="stylesheet" href="reset.css">
+        <style>
+            /* 1) relative_요소의 자기 위치가 살아있음*/
+            /*
+            #s1 ul {background-color: olivedrab; height: 300px; width: 300px; position: relative;}
+            #s1 li:nth-child(1){background-color: orange; position: relative; left: 50px; top: 30px;}
+            #s1 li:nth-child(2){background-color: tan;}
+            #s1 li:nth-child(3){background-color: antiquewhite;}
+            */
+
+            /* 2) relative_부모의 위치를 지정*/
+            #s1 ul {background-color: olivedrab; height: 300px; width: 300px; position: relative; left: 50px; top: 50px;}
+            #s1 li:nth-child(1){background-color: orange; position: relative; --left: 50px; top: 32px; right: 32px;}
+            #s1 li:nth-child(2){background-color: tan;}
+            #s1 li:nth-child(3){background-color: antiquewhite;}
+        </style>
+    </head> 
+    <body>   
+        <!--상대적 위치 position : relative-->
+        <section id="s1">
+            <h3>position:absolute</h3>
+            <ul>
+                <li>국어</li>
+                <li>영어</li>
+                <li>수학</li>
+            </ul>
+        </section>
+    </body>
+</html>   

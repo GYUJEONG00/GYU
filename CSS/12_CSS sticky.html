@@ -1,0 +1,152 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                  
+        <title>12_sticky.html</title>
+        <link rel="stylesheet" href="reset.css">
+        <style>
+            #s1 ul {background-color: olivedrab;}
+            #s1 li:nth-child(1){background: orange;} 
+            #s1 li:nth-child(2){background: tan;}
+            #s1 li:nth-child(3){background: antiquewhite;}
+            
+            /* 1)position : fixed -> 뒤의 요소를 덮어버림 
+            #header {background-color: wheat; height: 70px; position: fixed; width: 100%;}
+            */
+
+            /* 2)position : sticky -> 뒤의 요소 안덮고 그 위에 요소가 등장함,스크롤은 안따라옴->항상 top: 0;을 해줘야함 */
+            #header {background-color: wheat; 
+                     height: 70px; 
+                     position: sticky; 
+                     width: 100%;
+                     top: 0;}
+        </style>
+    </head> 
+    <body>   
+        <!--붙임 위치 position : sticky-->
+        
+        <header id="header">
+            <h1>아이티윌</h1>
+        </header>
+        <hr>
+
+        <section id="s1">
+            <h1>position:sticky</h1>
+            <ul>
+                <li>개나리</li>
+                <li>진달래</li>
+                <li>라일락</li>
+            </ul>
+        </section>
+        
+        <!--스크롤 테스트를 위해 삽입-->
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p> 
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+
+
+    </body>
+</html>   

@@ -63,13 +63,59 @@ div > span > h2{
     font-size: 0;
 }
 
-
-
-/*#category {
-    width: 320px;
-    padding: 10px;
-    border: 3px solid black;
+/*-----------------220801문서 구조*/
+#nav {
+    width: 300px;
+    height: 500px;
+    background: beige;
     margin: auto;
-    text-align: center;
-    color: black;
+}
+
+
+
+/*본문안에 들어가는 모든 ul태그에 적용
+    ul{
 }*/
+
+
+#nav>ul{ /*id=nav의 자식중에서 ul태그*/
+    list-style: none;
+}
+
+#nav .news { /*id=nav안에서 모든 class=news*/
+    background: burlywood;
+    font-weight: bold;  
+}
+
+
+
+/*태그의 상세속성을 개별적으로 접근하는법*/
+/*
+    li:nth-child() li목록을 순서대로 접근
+    순서값=인덱스 
+*/
+#nav>ol>li:nth-child(2){/*li요소 가운데서 2번째라는 의미*/
+    font-weight: bold;
+}
+
+/*특정 링크만 css적용*/
+#nav>ol>li>a{
+    width: 200px;
+    height: 100px;
+    background-color: orange;
+    text-decoration-style: wavy;
+}
+
+/*---------------2교시*/
+/*
+   참조 https://www.w3schools.com/cssref/sel_active.asp
+   a:link     - 일반적 링크 및 방문하지 않은 링크
+   a:visited  - 방문했던 링크
+   a:hover    - 마우스 올렸을 때 링크
+   a:active   - 마우스 누르는 순간의 링크
+*/
+
+a:link      {color: black; text-decoration: none;}
+a:visited   {color: black; text-decoration: none;}
+a:hover     {color: black; text-decoration: underline;}
+a:active    {color: black; text-decoration: none;}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                  
+        <title>09_absolute.html</title>
+        <link rel="stylesheet" href="reset.css">
+        <style>
+            /*#s1 ul{background-color: rgb(230, 230, 178); height: 300px;}*/
+            /*#s1 li:nth-child(1){background-color: orange; position: absolute; left: 100px; top: 30px;}*/  /*왼쪽,위 여백을 줘라*/
+            /*#s1 li:nth-child(1){background-color: orange; position: absolute; right: 0; bottom: 0;}*/
+            /*움직이는 기준 : 부모를 기점으로 여백을 잡음->s1의 경우는 section 위치 선정을 안해서 그 부모 body를 기준으로함*/
+
+            
+            /* 1)<body>본문 영역이 기준 좌표 
+            #s1 li:nth-child(1){background-color: orange; position: absolute; left: 0; top: 0;}
+            #s1 li:nth-child(2){background-color: tan;}
+            #s1 li:nth-child(3){background-color: antiquewhite;}
+            */
+
+
+            /* 2)부모 영역을 기준으로 position:relative*/
+            /*부모가 ul, 자식이 li*/
+            /*
+            #s1 ul {background-color: olivedrab; 
+                    height: 300px; 
+                    right: 50px; 
+                    left: 50px; 
+                    top: 50px; 
+                    position: relative;}
+            #s1 li:nth-child(1){background-color: orange; 
+                                position: absolute; 
+                                --left: 0; 
+                                --top: 0;
+                                right: 0;
+                                bottom: 0;
+                                }
+            #s1 li:nth-child(2){background-color: tan;}
+            #s1 li:nth-child(3){background-color: antiquewhite;}
+            */
+            /*첫번쨰 경우에는 body를 기준으로 잡아서 body의 right,bottom값 위치로 감, 
+              두번째 경우에는 relative로 부모영역 ul을 기준으로 잡아서 ul영역 내에서 right, bottom값으로 이동*/
+            
+
+            /* 3)부모*/
+            #s1 ul {background-color: olivedrab; height: 300px; width: 300px; position: relative;}
+            #s1 li:nth-child(1){background-color: orange; position: absolute; right: 0; bottom: 0; width: 100%;}
+            #s1 li:nth-child(2){background-color: tan;}
+            #s1 li:nth-child(3){background-color: antiquewhite;}
+
+        </style>
+    </head> 
+    <body>   
+        <!--절대적 위치 position : absoulte -->
+        <!--앱솔루트는 위치이동하면 원래 자리는 사라짐, relative는 원래 자리는 지켜짐-->
+        <section id="s1">
+            <h3>position:absolute</h3>
+            <ul>
+                <li>국어</li>
+                <li>영어</li>
+                <li>수학</li>
+            </ul>
+        </section>
+    </body>
+</html>   

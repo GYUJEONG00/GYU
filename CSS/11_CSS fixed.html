@@ -1,0 +1,118 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                  
+        <title>11_fixed.html</title>
+        <link rel="stylesheet" href="reset.css">
+        <style>
+            /* absolute  : 문서영역기준 (부모 혹은 body영역을 기준)
+                fixed     : 뷰포트(화면영역 기준)  
+            */
+
+            /* 1) */
+            /* 
+            #s1 ul {background-color: olivedrab;} /* 부모 포지션 지정안했으니 body를 기준으로함 */
+            /*
+            #s1 li:nth-child(1){background: orange;}
+            #s1 li:nth-child(2){background: tan; 
+                                --position: absolute;
+                                --position : relative;
+                                position : fixed;
+                                right: 100px; 
+                                top: 100px;}
+            #s1 li:nth-child(3){background: antiquewhite;}
+            */
+
+
+            /* 2) 화면 하단에 고정_부모 포지션 지정안함 */
+            /*
+            #s1 ul {background-color: olivedrab;}
+            #s1 li:nth-child(1){background: orange;}
+            #s1 li:nth-child(2){background: tan; 
+                                position : fixed;
+                                bottom: 0; 
+                                height: 80px;
+                                width: 100%;}
+            #s1 li:nth-child(3){background: antiquewhite;}
+            */
+
+            /* 3) 부모 포지션 지정_fixed는 뷰포트가 기준이라 부모요소에 영향안받는것 확인가능 */ 
+            #s1 ul {background-color: olivedrab; position: relative ; height: 500px;}
+            #s1 li:nth-child(1){background: orange;}
+            #s1 li:nth-child(2){background: tan; 
+                                position : fixed;
+                                bottom: 0; 
+                                height: 80px;
+                                width: 100%;}
+            #s1 li:nth-child(3){background: antiquewhite;}
+
+
+
+        </style>
+    </head> 
+    <body> 
+        <!--고정위치 position:fixed -->  
+        <section id="s1">
+            <h1>position:fixed</h1>
+            <ul>
+                <li>개나리</li>
+                <li>진달래</li>
+                <li>라일락</li>
+            </ul>
+        </section>
+        
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+    </body>
+</html>   

@@ -1,0 +1,83 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                  
+        <title>14_layout.html</title>
+        <link rel="stylesheet" href="reset.css">
+        <style>
+            /* 1) 
+             .container {border: 4px solid blue; 
+                        width: 900px; -->2px border를 가진 300px의 inner를 담기엔 전체크기가 안맞음
+                        margin: auto;}
+            */
+
+            /* 4) 
+            .container {border: 4px solid blue; 
+                        width: 912px; -->이렇게 할 필요없이 css에서 자동으로 div크기에 맞춰주는기능있음
+                        margin: auto;}
+            */
+
+            /* 5)완성코드 */
+            .container {
+                border: 4px solid blue; 
+                width: 900px;
+                margin: auto;}
+
+            /* 2) */
+            header {border: 2px solid salmon;
+                    width: 100% 
+                    height: 150px;
+                    line-height: 150px;
+                    text-align: center;}
+
+            /* 3) 
+            .inner section {border: 2px solid fuchsia; 
+                            width: 300px; 
+                            height: 300px; 
+                            float: left; }
+            */
+
+            /* 6) 3번 수정본 */
+            .inner section {
+                border: 2px solid fuchsia; 
+                width: 300px; 
+                height: 300px; 
+                float: left; 
+                padding: 20px;
+                box-sizing: border-box;} /*선 굵기, 여백 등으로 늘어난 부분은 container의 width내에서 해결함*/
+                            
+            /* 7) 
+            footer {border: 5px solid yellow;
+                    height: 150px;}  
+            float속성은 전 요소 속성을 상속받는 특징이 있음 
+            이미 위(section)에서 쓴 float:left가 있는 상태
+            */
+
+            /* 8) 
+            = footer {border: 5px solid yellow; height: 150px; float: left;} 
+            */
+
+            /* 9) clear : float속성 해제. 6)에서 상속받은 float: left속성을 지워야함
+            footer {border: 5px solid yellow; height: 150px; clear: left; --clear: right;} 
+            */
+
+            /* 10) 완성코드 
+                    참조 : https://www.w3schools.com/css/css_float_clear.asp
+            */
+            footer {border: 5px solid yellow; height: 150px; clear: both;} 
+
+        </style>
+    </head> 
+    <body>   
+        <!-- 전체 레이아웃 구성하기 -->
+        <div class="container">
+            <header>Header</header>
+            <div class="inner">
+                <section>Section 1</section>
+                <section>Section 2</section>
+                <section>Section 3</section>
+            </div>
+            <footer>Footer</footer>
+        </div>
+    </body>
+</html>   
