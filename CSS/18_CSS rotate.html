@@ -1,0 +1,71 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                      
+        <title>18_rotate.html</title>
+        <style>
+            #menu {
+                width: 150px;
+                height: 130px;
+                background-color: gainsboro;
+                margin: auto;           /*수평을 기준으로 가운데 정렬*/
+                border-radius: 10px;    /*모서리 라운드 처리*/
+                cursor: pointer;        /*커서 닿으면 손모양으로 변함 */
+                position: relative;
+            }
+
+            #menu:hover { /*마우스가 올라오면 */
+                background-color: orange;
+            }
+            
+            #menu>strong {
+                position: absolute; /*원래 내 위치도 사라지고 부모안에서만 움직임*/
+                bottom: 10px;
+                left: 40px;
+            }
+            /*-------------------정리중--*/
+            #menu>.gear { /*값을 별도 지정안하면 class ="gear"이미지가 겹쳐있음*/
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-image: url(../images/gear-gray.png);/*블럭요소 div 백그라운드삽입 */
+                background-size: 40px 40px;
+            }
+
+            /*톱니바퀴 이미지 배치*/
+            #menu>.gear:nth-child(1) {
+                top: 20px;
+                left: 45px;  
+            }
+
+            #menu>.gear:nth-child(2) {
+                top: 47px;
+                left: 65px;
+                transform: rotate( 15deg); /*양수_시계방향회전, 음수_반시계방향회전*/
+            }
+
+            /*마우스가 올라오면 이미지를 변경*/
+            #menu:hover>.gear {
+                background-image: url(../images/gear.png);
+                transition: .3s linear; /*변경을 부드럽게 만들어줌*/
+            }
+
+            /*버튼 안 이미지 회전*/
+            #menu:hover>.gear:nth-child(1){
+                transform: rotate(-180deg); /*반시계 방향으로 회전*/
+            }
+
+            #menu:hover>.gear:nth-child(2){
+                transform: rotate(195deg); /*시계 방향으로 회전*/ /*위에서 요소에 로테이션 15준거 참고*/
+            }
+
+        </style>
+    </head> 
+    <body>    
+        <div id="menu">
+            <div class="gear"></div> 
+            <div class="gear"></div>     
+            <strong>SETTINGS</strong>  
+        </div>
+    </body>
+</html>    

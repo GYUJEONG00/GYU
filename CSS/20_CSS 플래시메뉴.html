@@ -1,0 +1,104 @@
+<!DOCTYPE html>    
+
+<html lang="ko">                
+    <head>                      
+        <title>20_플래시메뉴.html</title>
+        <style>
+            .hide {
+                width: 0;
+                height: 0;
+                margin: 0;
+                padding: 0;
+                font-size: 0;
+                line-height: 0; /*line box의 높이*/
+            }
+
+            #nav {
+                width: 200px;
+                margin: 0 auto;
+                background-color: silver;
+            }
+
+            #nav>ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            /* 1)링크되는 문자열에 스타일 적용 */
+            #nav>ul>li>a{
+                text-decoration: none;
+                font-weight: bold;
+                color: black;
+                width: 200px;
+                height: 64px; /*block효과에서 유효함을 알 수 있음*/
+                display: block;
+                text-indent: 30px; /*들여쓰기*/
+                
+                /* 4)이미지 추가 */
+                background-image: url(../images/icons.png);
+                background-repeat: no-repeat; /*이미지가 반복해서 들어가는것을 해제*/
+                background-position: right 0; /*right top(여백없음)*/
+            }
+
+
+
+
+            /* 2) 링크문자열에 마우스가 over되면 배경색 변경*/
+            #nav>ul>li:nth-child(1)>a:hover{
+                background-color: rgb(229, 82, 200);
+            }
+
+            #nav>ul>li:nth-child(2)>a:hover{
+                background-color: rgb(114, 209, 250);
+            }
+
+            #nav>ul>li:nth-child(3)>a:hover{
+                background-color: rgb(28, 198, 73);
+            }
+
+            #nav>ul>li:nth-child(4)>a:hover{
+                background-color: rgb(234, 249, 103);
+            }
+
+            /* 3)링크문자열에 마우스가 over되면 다양한 스타일 적용*/
+            #nav>ul>li>a:hover{
+                width: 240px;
+                color: white;
+                font-size: 16px;
+                text-shadow: 2px 2px 3px black;/*x축 y축 blur 그림자색상*/
+                box-shadow: 2px 2px 3px black;
+                border-radius: 0px 33px 33px 0px; /*순서 : 상단 좌측, 상단 우측, 하단 우측, 하단 좌측 */
+                opacity: 0.8 ; /*투명도*/
+                transition: width .5s ease; /*가로방향으로 0.5초만에 부드럽게 전환 */
+            }
+
+            /* 5) 현재 길쭉한 이미지 사용
+                ->각각 다른 이미지를 보여주기 위해 각 이미지위쪽 여백을 조절해서 이미지 지정*/
+            #nav>ul>li:nth-child(2)>a{
+                background-position: right -66px; 
+            }
+
+            #nav>ul>li:nth-child(3)>a{
+                background-position: right -464px; 
+            }
+
+            #nav>ul>li:nth-child(4)>a{
+                background-position: right -528px; 
+            }
+
+        </style>
+    </head> 
+    <body>                      
+        <h1 class="hide">플래시메뉴</h1>
+        <div id="nav">
+            <h2 class="hide">주요메뉴</h2>
+            <ul>
+                <li><a href="#">flickr</a></li>
+                <li><a href="#">twitter</a></li>
+                <li><a href="#">newsvine</a></li>
+                <li><a href="#">last.fm</a></li>
+            </ul>
+        </div>
+    </body>
+</html>    
