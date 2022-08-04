@@ -1,0 +1,112 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>02_지폐개수.html</title>
+        <style>
+            #demo {
+                width: 200px;
+                height: 300px;
+                background-color: bisque;
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+            #demo2 {
+                width: 200px;
+                height: 300px;
+                background-color: bisque;
+                position: relative;
+                top: 0;
+                left: right;
+            }
+
+        </style>
+    </head> 
+    <body>
+        <div id="demo"></div>
+        <div id="demo2"></div>
+
+
+        <script>
+            //연습문제 ) 각 지폐갯수를 구해서 표작성하여 본문 id=demo에 출력하시오
+            /*
+            
+            */
+           
+            var money=54320;
+            let table="";
+            
+
+            table=table + "<table border='1'>";
+            table=table + "<tr>";
+            table=table + "    <th>만원</th>";
+            let q=parseInt(money/10000);
+            money=(money%10000);  //4320
+            table=table + "    <td>" + q +"장" + "</td>";
+            table=table + "</tr>";
+
+            table=table + "<tr>";
+            table=table + "    <th>천원</th>" ;
+            w=parseInt(money/1000);
+            money=(money%1000);  //320
+            table=table + "    <td>" + w +"장" + "</td>";
+            table=table + "</tr>"
+
+            table=table + "<tr>"
+            table=table + "    <th>백원</th>" 
+            let e=parseInt(money/100);
+            money=(money%100);  //20
+            table=table + "    <td>" + e +"장" + "</td>";
+            table=table + "</tr>"
+
+            table=table + "<tr>"
+            table=table + "    <th>십원</th>" 
+            let r=parseInt(money/10);
+            table=table + "    <td>" + r +"장" + "</td>";
+            table=table + "</tr>"
+
+
+            document.getElementById("demo").innerHTML=table
+
+/////////////////////////////////////////////////풀이
+            let money2=54320;
+            let m=parseInt(money2/10000); //5
+            money2=money2%10000;           //4320 money%=10000
+
+            let c=parseInt(money2/1000);  //4
+            money2=money2%1000;            //320 
+
+            let b=parseInt(money2/100);   //3
+            money2=money2%100;             //20
+
+            let s=parseInt(money2/10);    //2
+
+
+            let result=""; //demo에 넣을 결과값 변수
+            result=result+"<table border='1'>"; //result +="<table border='1'>"
+            result=result+"<tr>";
+            result=result+"  <th>만원</th>";
+            result=result+"  <td>" + m + "장</td>";
+            result=result+"</tr>";
+            result=result+"<tr>";
+            result=result+"  <th>천원</th>";
+            result=result+"  <td>" + c + "장</td>";
+            result=result+"</tr>";
+            result=result+"<tr>";
+            result=result+"  <th>백원</th>";
+            result=result+"  <td>" + b + "장</td>";
+            result=result+"</tr>";
+            result=result+"<tr>";
+            result=result+"  <th>십원</th>";
+            result=result+"  <td>" + s + "장</td>";
+            result=result+"</tr>";
+            result=result+"</table>";
+
+            //본문 id=demo에 출력
+            document.getElementById("demo2").innerHTML=result;
+        
+
+        </script>
+    </body>
+</html>    

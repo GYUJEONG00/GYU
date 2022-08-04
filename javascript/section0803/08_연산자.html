@@ -48,8 +48,41 @@
             //num=num%4;와 같은 표현
             document.write(num+"<hr>"); //1
 
+//////////////////////////////////20220804
 
             //3) 1증감 연산자
+            let a=3;
+            // a 'a' 변수와 상수
+            a=a+1; //a=4
+            document.write(a + "<hr>");
+            a+=1;  //a=5
+            document.write(a + "<hr>");
+            a++;   //a=6
+            document.write(a + "<hr>");
+            ++a;   //a=7
+            document.write(a + "<hr>");
+
+            let b=3;
+            b=b-1;   //b=2
+            document.write(b + "<hr>");
+            b-=1;    //b=1
+            document.write(b + "<hr>");
+            b--;     //b=0
+            document.write(b + "<hr>");
+            --b;     //b=-1
+            document.write(b + "<hr>");
+
+            //1증감연산자는 다른 계산식과 같이 사용할 경우 주의 
+            let c=10;
+            let d=20;
+            let i=c++; //i=c
+                       //c=c+1 (11) (연산 후 증가)
+            let j=--d; //d=d-9 (19) (연산 전 가산)
+                       //j=19
+            document.write(c+d+i+j);// 11 19 10 19
+            document.write("<hr>");
+
+
 
         </script>
     </body>
