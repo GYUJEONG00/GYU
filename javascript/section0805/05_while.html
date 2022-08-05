@@ -1,0 +1,49 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>05_while.html</title>
+        <style></style>
+    </head> 
+    <body>
+        <h3>while문과 do-while문</h3>
+
+        <script>
+            /*
+                1) while문
+                -while(조건){ 조건이 참일시 수행문 }
+                -while(true){} 무한루프    
+            */
+            let a=1; 
+            while(a<=3){
+                document.write(a); //123
+                document.write("JAVA<br>");
+                a=a+1;
+            }
+            document.write(a+"<hr>");//4
+            
+            
+            /*
+                2) do-while문
+                    -do {
+                        조건이 참이면 실행
+                    }while(조건);
+            */
+            let b=1;
+            do{
+                document.write(b);
+                document.write("Python");
+                document.write("<hr>");
+                b=b+1;
+            }while(b<=3);
+
+
+            let c=5;
+            do{
+                document.write("jQuery");
+                c=c+1;
+            }while(c<=3); //do-while은 조건이 틀리더라도 1번은 무조건 실행함
+
+        </script>
+    </body>
+</html>    
