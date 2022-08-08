@@ -187,9 +187,29 @@
                         break;
                     }
             }
+            document.write("<hr>");
             
+            ////////////////////////////////////////풀이0808
+            let run=true;
+            let num=0;
+            let result=0;
+            let str="";
             
+            while(run){
+                num+=3;     //순서주의
+                result+=num;
+                // document.write("num:"+num+"&nbsp;&nbsp; result: "+result);
+                // document.write("<hr>");
+                str=str+num+"+";
 
+                if(result>100){
+                    break;
+                }
+            }
+            document.write(str);
+            document.write("<hr>");
+            document.write("3의 배수 누적의 합"+result);
+            document.write("<hr>");
         </script>
     </body>
 </html>    

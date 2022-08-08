@@ -1,0 +1,188 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>01_성적표.html</title>
+        <style>
+            #demo {
+                width: 200px;
+                height: 500px;
+            }
+
+            table, th, td {
+                border : 1px solid black;
+                width: 100%;
+                border-collapse: collapse; /*table과셀td의 테두리 간격을 어떻게 처리할지  */
+            }
+
+            td:hover{
+                color:aqua;
+            }
+
+            th{
+                text-align: left;
+            }
+
+        </style>
+    </head> 
+    <body>
+        <h3>성적표</h3>
+        <div id="demo"></div>
+
+        <script>
+            let name="손흥민";
+            let kor=10, eng=100, mat=95;
+
+            let total=kor+eng+mat;            //총점 구하기 
+            let aver=parseInt(total/3);       //평균구하기(소수점 버림)
+
+            /*
+            출력결과 : 본문demo에 표작성 
+            -----------------------------
+            이름    홍길동
+            -----------------------------
+            국어    100
+            -----------------------------
+            영어    100
+            -----------------------------
+            수학    95
+            -----------------------------
+            총점    235
+            -----------------------------
+            평균    98
+            -----------------------------
+                    A학점                    
+            결      합격                     
+            과      ★★★★★★★★★              
+                    장학생                   
+            ----------------------------
+            문1) //평균 90이상 A, 80이상 B, 70이상 C ~~
+            문2) //평균 70점 이상은 합격, 한과목이라도 40미만이면 재시험(합격, 재시험,탈락)
+            문3) //평균 10점당 한개씩
+            문4) //평균 95이상이면 장학생
+            */
+            let score="";
+            let result="";
+            let star="";
+            let scho="&nbsp;";
+            
+            //문1,4 
+            switch(true){
+                case aver>=95 : scho="장학생"; 
+                case aver>=90 : score="A학점"; break;
+                case aver>=80 : score="B학점"; break;
+                case aver>=70 : score="C학점"; break;
+                case aver>=60 : score="D학점"; break;
+                default : score="F학점"; break;
+            }
+
+            ////////////문1) 풀이 
+            // switch grade="";
+            // switch(parseInt(aver/10)){
+            //     case 10 : 
+            //     case 9 : grade="A학점"; break;
+            //     case 8 : grade="B학점"; break;
+            //     case 7 : grade="C학점"; break;
+            //     case 6 : grade="D학점"; break;
+            //     default : grade="F학점"; break;
+            // 
+
+            //문2
+            if(aver>=70){
+                result="합격"
+                if(kor<40||eng<40||mat<40){
+                    result="재시험"
+                }
+            }else{
+                result="탈락"
+            }
+
+            ////////////문2) 풀이 
+            // let pass="";
+            // if(aver>=70){
+            //     if(kor<40||eng<40||mat<40){
+            //         pass="재시험";
+            //     }else{
+            //         pass="합격";
+            //     }
+            // }else{
+            //     pass="탈락";
+            // 
+
+            //문3
+            averFirst=parseInt(aver/10);
+            for(let i=1; i<=averFirst; i++){
+                star+="☆";
+            }
+
+            // ////////////문3) 풀이 
+            // let star="";
+            // for(let n=0; n=parseInt(aver/10); n++){
+            //     star=star+"*";
+            // 
+
+            ////////////문4) 풀이 
+            let special="";
+            if(aver>=95){
+                special="<span \
+                    style='color:red; \
+                    font-weight: bold'>장학생</span>"
+            }
+
+            //표만들기 
+            let table="";
+            table+="<table>";
+            table+="<tr>";
+            table+="   <th>이름</th>";
+            table+="   <td>"+name+"</td>";
+            table+="</tr>";
+            table+="<tr>";
+            table+="   <th>국어</th>";
+            table+="   <td>"+kor+"</td>";
+            table+="</tr>";  
+            table+="<tr>";
+            table+="   <th>영어</th>";
+            table+="   <td>"+eng+"</td>";
+            table+="</tr>";
+            table+="<tr>";
+            table+="   <th>수학</th>";
+            table+="   <td>"+mat+"</td>";
+            table+="</tr>";  
+            table+="<tr>";
+            table+="   <th>총점</th>";
+            table+="   <td>"+total+"</td>";
+            table+="</tr>";      
+            table+="<tr>";
+            table+="   <th>평균</th>";
+            table+="   <td>"+aver+"</td>";
+            table+="</tr>"; 
+            // table+="<tr>";
+            // table+="   <th>결과</th>";
+            // table+="   <td>"+score+"<br>"
+            //                      +result+"<br>"
+            //                      +star+"<br>"
+            //                      +scho+"</td>"
+            // table+="</tr>";
+            table+="<tr>";
+            table+="   <th rowspan='4'>결과</th>";
+            table+="   <td>"+score+"</td>"
+            table+="</tr>"; 
+            table+="<tr>";
+            table+="   <td>"+result+"</td>"
+            table+="</tr>"; 
+            table+="<tr>";
+            table+="   <td>"+star+"</td>"
+            table+="</tr>"; 
+            table+="<tr>";
+            table+="   <td>"+scho+"</td>" 
+            table+="</tr>"; 
+            table+="</table>";
+
+
+
+            
+            document.getElementById("demo").innerHTML=table;
+        </script>
+        
+    </body>
+</html>    
