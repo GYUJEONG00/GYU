@@ -1,0 +1,81 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>03_배열 연습문제.html</title>
+        <style>
+        </style>
+    </head> 
+    <body>
+        <h3>배열 연습문제</h3>
+
+        <script>   
+            let num=[7, 8, -12, 5, -22]; 
+            let size=num.length; //5
+            
+            document.write(num);
+            document.write("<hr>");
+
+        
+
+            //문3)최대값, 최소값을 각각 구하시오
+            let max=0;
+            let min=0;
+    
+            for(let i=0; i<num.length; i++){
+                if(num[i]>max){
+                    max=num[i];
+                }
+            }
+
+            for(let i=0; i<num.length; i++){
+                if(num[i]<min){
+                    min=num[i];
+                }
+            }
+            document.write("4) 최대값 : "+max+", 최소값 : "+min);
+            document.write("<hr>");
+
+
+            //문4)num[4]요소의 등수를 구하시오
+            //맨앞요소부터 비교
+            let cnt=1;
+            for(let i=0; i<num.length; i++){//01234
+                if(num[i]>num[4]){          //1<4번째 +1 
+                    cnt=cnt+1;
+                }
+            }
+            document.write("4) num[4]의 등수 : "+cnt+"등");
+            document.write("<hr>");
+
+
+            //문5) num배열 요소의 각각의 등수를 모두 구하시오
+            //숫자가 큰걸 1등 or 작은걸 1등
+            //요소와 요소의 짝꿍을 먼저 비교하여 등수+1
+            let big=0;   //비교결과
+            let count=0; //등수
+            let array=[];//등수 배열 
+            for(let i=0; i<num.length; i++){//01234
+                for(let k=0; k<=i; k++){
+                    if(num[i]>num[k]){ // 7 0 4 8 7 3 -12 8 5 8 -22 8
+                        big=num[i];
+                        count=count+1;
+                    }
+                    array[i]=count;
+                }
+            }
+
+            for(let i=0; i<array.length; i++){
+                for(let k=0; k>num.length; k++){
+                document.write("5) num["+i+"] : "+array[k]);
+                }
+            }
+
+            // kor[0]=10; 
+            // kor[1]=20;
+
+
+         </script>
+    </body>
+</html>   
+ 

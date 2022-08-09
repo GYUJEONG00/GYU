@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://guuu3.tistory.com/manage/newpost/?type=post&returnURL=%2Fmanage%2Fposts%2F -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="mceDefaultStyles" type="text/css">.mce-content-body div.mce-resizehandle {position: absolute;border: 1px solid black;box-sizing: content-box;background: #FFF;width: 7px;height: 7px;z-index: 10000}.mce-content-body .mce-resizehandle:hover {background: #000}.mce-content-body img[data-mce-selected],.mce-content-body hr[data-mce-selected] {outline: 1px solid black;resize: none}.mce-content-body .mce-clonedresizable {position: absolute;outline: 1px dashed black;opacity: .5;filter: alpha(opacity=50);z-index: 10000}.mce-content-body .mce-resize-helper {background: #555;background: rgba(0,0,0,0.75);border-radius: 3px;border: 1px;color: white;display: none;font-family: sans-serif;font-size: 12px;white-space: nowrap;line-height: 14px;margin: 5px 10px;padding: 5px;position: absolute;z-index: 10001}
+.mce-visual-caret {position: absolute;background-color: black;background-color: currentcolor;}.mce-visual-caret-hidden {display: none;}*[data-mce-caret] {position: absolute;left: -1000px;right: auto;top: 0;margin: 0;padding: 0;}
+.mce-content-body .mce-offscreen-selection {position: absolute;left: -9999999999px;max-width: 1000000px;}.mce-content-body *[contentEditable=false] {cursor: default;}.mce-content-body *[contentEditable=true] {cursor: text;}
+</style><link rel="stylesheet" type="text/css" id="u0" href="./font.css"><link rel="stylesheet" type="text/css" id="u1" href="./editor-content.css"><link rel="stylesheet" type="text/css" id="u2" href="./editor-mobile-content.css"><link rel="stylesheet" type="text/css" id="u3" href="./content.css"><link rel="stylesheet" type="text/css" id="u4" href="./editor-content(1).css"><link rel="stylesheet" data-mce-href="https://t1.daumcdn.net/tistory_admin/lib/highlight.js/styles/atom-one-light.min.css" href="./atom-one-light.min.css"></head><body id="tinymce" class="mce-content-body content use_p_margin" data-id="editor-tistory" contenteditable="true" spellcheck="false" style="overflow-y: hidden; padding-left: 10px; padding-right: 10px; padding-bottom: 50px;" data-mce-style="overflow-y: hidden; padding-left: 10px; padding-right: 10px; padding-bottom: 50px;" role="textbox" aria-multiline="true" aria-label="글 내용 입력"><p data-ke-size="size16"><b>배열</b>&nbsp;</p><p data-ke-size="size16"><br data-mce-bogus="1"></p><pre id="code_1660009519260" class="html hljs xml" data-ke-language="html" data-ke-type="codeblock" contenteditable="false">//선언 먼저 하고 값 넣는 방식
+let names=[];
+            names[0]="무궁화";
+            names[1]="개나리";
+            names[2]="진달래";
+
+            document.write(names[0]);
+            document.write(names[1]);
+            document.write(names[2]);
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+
+//선언과 동시에 배열 항목 저장 
+ let points=[40, 100, 25, 3, 7];
+             document.write(points[0]); //40
+            document.write(points[1]); //100
+            document.write(points[2]); //25
+            document.write(points[3]); //3
+            document.write(points[4]); //7
+
+//배열의 길이(크기)구하는법
+document.write(points.length); //5
+
+//배열 요소 전체 값 출력
+document.write(points);        //40,100,25,3,7</pre><p>document. write( 배열이름<b>.length</b> );&nbsp; : 배열 크기(길이)<br>document. write ( <b>배열이름</b> );&nbsp; : 배열 전체 항목 출력<br></p><p><br data-mce-bogus="1"></p><p><b>for문을 이용한 배열 출력</b>&nbsp;</p><pre id="code_1660010166286" class="html hljs xml" data-ke-language="html" data-ke-type="codeblock" contenteditable="false">let points=[40, 100, 25, 3, 7];
+
+for(let i=0; i<span class="hljs-tag">&lt;<span class="hljs-name">points.length;</span> <span class="hljs-attr">i</span>++){
+    <span class="hljs-attr">document.write</span>("<span class="hljs-attr">points</span>배열의 "+<span class="hljs-attr">i</span>+"번째 값 <span class="hljs-attr">:</span> "+<span class="hljs-attr">points</span>[<span class="hljs-attr">i</span>]);
+    <span class="hljs-attr">document.write</span>("&lt;<span class="hljs-attr">br</span>&gt;</span>");
+}
+//points배열의 0번째 값 : 40
+// points배열의 1번째 값 : 100
+// points배열의 2번째 값 : 25
+// points배열의 3번째 값 : 3
+// points배열의 4번째 값 : 7</pre><p><br data-mce-bogus="1"></p><p><br data-mce-bogus="1"></p><p>자바와 달리 자바스크립트의 배열은 유동적 <br>아래와 같이 지정한 배열의 길이를 넘어가는&nbsp; 배열 인덱스에 값을 입력시 배열의 크기가 커짐</p><pre id="code_1660010412567" class="html hljs xml" data-ke-language="html" data-ke-type="codeblock" contenteditable="false">let fruits=["Banana", "Apple", "Orange", "Mango"];
+document.write(fruits.length+"<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>");    //4
+fruits[6]="Lemon";                       //자바스크립트에서는 허용됨
+document.write(fruits.length+"<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>");    //7
+            
+for(let i=0; i<span class="hljs-tag">&lt;<span class="hljs-name">fruits.length;</span> <span class="hljs-attr">i</span>++){
+    <span class="hljs-attr">document.write</span>("<span class="hljs-attr">fruits</span>배열의 "+<span class="hljs-attr">i</span>+"번째 값 <span class="hljs-attr">:</span> "+<span class="hljs-attr">fruits</span>[<span class="hljs-attr">i</span>]);
+    <span class="hljs-attr">document.write</span>("&lt;<span class="hljs-attr">br</span>&gt;</span>");
+}
+
+<span class="hljs-comment">&lt;!-- 
+fruits배열의 0번째 값 : Banana
+fruits배열의 1번째 값 : Apple
+fruits배열의 2번째 값 : Orange
+fruits배열의 3번째 값 : Mango
+fruits배열의 4번째 값 : undefined  //&lt;-
+fruits배열의 5번째 값 : undefined  //&lt;-
+fruits배열의 6번째 값 : Lemon 
+--&gt;</span></pre><p><br data-mce-bogus="1"></p><p><br data-mce-bogus="1"></p><p><b>배열 메소드&nbsp;</b></p><p>메소드 method :&nbsp; (객체의)동작=기능=function<br></p><pre id="code_1660011550779" class="html hljs xml" data-ke-language="html" data-ke-type="codeblock" contenteditable="false">            let fruits=["Banana", "Apple", "Orange", "Mango"];
+            
+            document.write(fruits);                    //배열의 전체 요소 출력 : Banana,Apple,Orange,Mango
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+            document.write(fruits.toString());         //배열 요소를 문자열로 변경 : Banana,Apple,Orange,Mango
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+            document.write("#"+fruits.toString()+"#"); //#Banana,Apple,Orange,Mango#
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+            
+            document.write(fruits.length);             //배열 요소의 개수 : 4
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+            document.write(fruits.toString().length);  //배열 요소를 하나의 큰 문자열 변환 후 그것의 글자 개수
+                                                       //: 25 (글자수 출력됨)
+                                                       
+                                                       
+            document.write(fruits.join("*"));          //요소와 요소를 ()안에 있는것으로 연결
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");                    //Banana*Apple*Orange*Mango
+            
+            fruits.pop()                               // 배열의 마지막 요소 제거 
+            document.write(fruits);                    //Banana,Apple,Orange
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");  
+
+            fruits.push("kiwi");                       // 배열의 마지막 요소 추가
+            document.write(fruits);                    //Banana,Apple,Orange,kiwi
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+            
+            fruits.shift();                            //배열 맨앞 요소 제거
+            document.write(fruits);                    //Apple,Orange,kiwi
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+
+            fruits.unshift("Lemon");                   //배열 맨앞 요소 추가
+            document.write(fruits);                    //Lemon,Apple,Orange,kiwi
+            document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");</pre><p><br data-mce-bogus="1"></p><p><br data-mce-bogus="1"></p><p>배열명. _____</p><table style="border-collapse: collapse; width: 100%; height: 295px;" border="1" data-ke-align="alignLeft"><tbody><tr style="height: 17px;"><td style="width: 33.3333%; height: 17px;"><br></td><td style="width: 33.3333%; height: 17px;"><br></td><td style="width: 33.3333%; height: 17px;"><br></td></tr><tr style="height: 46px;"><td style="width: 33.3333%; height: 46px;">배열명.length()</td><td style="width: 33.3333%; height: 46px;">배열의 크기(길이) 알려줌<br>값 대입 안됨</td><td style="width: 33.3333%; height: 46px;"><br></td></tr><tr style="height: 20px;"><td style="width: 33.3333%; height: 20px;">배열명.toString()</td><td style="width: 33.3333%; height: 20px;">배열&nbsp;요소를&nbsp;문자열로&nbsp;변경</td><td style="width: 33.3333%; height: 20px;">ex)<br>document.write(fruits.toString().length);<br>배열 요소를 하나의 큰 문자열 변환 후 그것의 글자 개수 출력됨&nbsp;<br></td></tr><tr style="height: 21px;"><td style="width: 33.3333%; height: 21px;">배열명.join()</td><td style="width: 33.3333%; height: 21px;">요소와&nbsp;요소를&nbsp;()안에&nbsp;있는것으로&nbsp;연결</td><td style="width: 33.3333%; height: 21px;"><br></td></tr><tr style="height: 20px;"><td style="width: 33.3333%; height: 20px;">배열명.pop()</td><td style="width: 33.3333%; height: 20px;">배열의&nbsp;마지막&nbsp;요소&nbsp;제거&nbsp;</td><td style="width: 33.3333%; height: 20px;"><br></td></tr><tr style="height: 20px;"><td style="width: 33.3333%; height: 20px;">배열명.push()</td><td style="width: 33.3333%; height: 20px;">배열의 마지막 요소 추가</td><td style="width: 33.3333%; height: 20px;"><br></td></tr><tr style="height: 20px;"><td style="width: 33.3333%; height: 20px;">배열명.shift()</td><td style="width: 33.3333%; height: 20px;">배열&nbsp;맨앞&nbsp;요소&nbsp;제거</td><td style="width: 33.3333%; height: 20px;"><br></td></tr><tr style="height: 20px;"><td style="width: 33.3333%; height: 20px;">배열명.unshift()</td><td style="width: 33.3333%; height: 20px;">배열&nbsp;맨앞&nbsp;요소&nbsp;추가</td><td style="width: 33.3333%; height: 20px;"><br></td></tr><tr style="height: 111px;"><td style="width: 33.3333%; height: 111px;">배열명.splice()</td><td style="width: 33.3333%; height: 111px;"><br></td><td style="width: 33.3333%; height: 111px;">er)<br>fruits.splice(<span style="color: rgb(238, 35, 35);" data-mce-style="color: #ee2323;">2</span>,&nbsp;<span style="color: rgb(0, 109, 215);" data-mce-style="color: #006dd7;">0</span>,&nbsp;<span style="background-color: rgb(255, 193, 200);" data-mce-style="background-color: #ffc1c8;">"Lemon",&nbsp;"Kiwi"</span>);<br><span style="color: rgb(238, 35, 35);" data-mce-style="color: #ee2323;">2</span> : 새로운 요소를 추가할 시작 위치<br><span style="color: rgb(0, 109, 215);" data-mce-style="color: #006dd7;">0</span> : 지워질 요소의 개수<br><span style="background-color: rgb(255, 193, 200);" data-mce-style="background-color: #ffc1c8;">Lemon, Kiwi</span> : 추가 될 새로운 요소&nbsp;<br><br></td></tr><tr><td style="width: 33.3333%;"><br></td><td style="width: 33.3333%;"><br></td><td style="width: 33.3333%;">ex)<br>let&nbsp;arr4=arr1.concat(arr2,&nbsp;arr3);&nbsp;<br>arr1에&nbsp;arr2,arr3배열을&nbsp;합쳐라<br></td></tr></tbody></table><p><br data-mce-bogus="1"></p><p><br data-mce-bogus="1"></p><p><br data-mce-bogus="1"></p><p><b>정렬</b></p><p>어떤 Key값을 기준으로 순서대로 재배치하는 것&nbsp; <br>정렬유형 : <br>1)오름차순 ASC (Ascending) : 1-&gt;10, A-&gt;Z, A(대문자)-&gt;a(소문자) <br>2)내림차순 DESC (Descending) : 10-&gt;1 <br>정렬방식 : insertion sort(삽입정렬), selection sort(선택 정렬), bubble sort(버블 정렬),...<b><br></b></p><p><br data-mce-bogus="1"></p><p>1)문자형 데이터 정렬</p><pre id="code_1660014721138" class="html hljs xml" data-ke-language="html" data-ke-type="codeblock" contenteditable="false">fruits = ["Banana","Orange","Apple","Mango"];
+
+fruits.sort();                  //배열 요소를 오름차순 정렬
+document.write(fruits);         //Apple,Banana,Mango,Orange
+document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+
+fruits.reverse();               //배열 요소를 내림차순 정렬
+document.write(fruits);         //Orange,Mango,Banana,Apple
+document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");</pre><p>fruits.sort();&nbsp; : 배열&nbsp;요소를&nbsp;오름차순&nbsp;정렬&nbsp;</p><p>fruits.reverse();&nbsp; &nbsp; &nbsp;: 배열&nbsp;요소를&nbsp;내림차순&nbsp;정렬</p><p><br data-mce-bogus="1"></p><p><br data-mce-bogus="1"></p><p>2)숫자형 데이터 정렬 Numeric sort</p><p><br data-mce-bogus="1"></p><pre id="code_1660014982550" class="html hljs xml" data-ke-language="html" data-ke-type="codeblock" contenteditable="false">points = [40, 100, 1, 5, 25, 10];
+
+points.sort(function(a, b){return a - b});                 
+document.write(points);         //오름차순 : 1,5,10,25,40,100
+document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");
+
+points.sort(function(a, b){return b - a});             
+document.write(points);         //내림차순 : 100,40,25,10,5,1
+document.write("<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>");</pre><p><br data-mce-bogus="1"></p><p>sort()는 문자열 정렬에선 잘 작동하지만 숫자데이터는 문자열처럼 정렬하여 잘 작동하지못함(ex:앞자리 2,1때문에 25가 100보다 큰 것으로 인식됨)<br>즉&nbsp; 숫자데이터에선 sort()가 잘못된 결과를 리턴함 -&gt; 비교함수(compare function)로 문제해결가능</p><p>points.sort(function(a,&nbsp;b){return&nbsp;a&nbsp;-&nbsp;b});&nbsp;</p><p>points.sort(function(a,&nbsp;b){return&nbsp;b&nbsp;-&nbsp;a});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></body></html>
