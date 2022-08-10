@@ -1,0 +1,61 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>05_함수.html</title>
+        <style>
+        </style>
+    </head> 
+    <body>
+        <h3>사용자 정의 함수</h3>
+
+        <script>
+           //참조 : https://www.w3schools.com/js/js_functions.asp
+           /*
+                함수, function, method (★★★★★)
+                    -일정한 기능을 가지고 있음 
+                    -임의의 함수 정의(작성) 가능하여 호출할 수 있음
+                    -->호출함으로써 함수를 실행하는 것
+                    -형식 : function 함수명() {}
+                    -       함수명은 식별자 규칙 지키기
+                    예)document.write() : ()값을 웹브라우저 본문영역<body>에 출력해라
+                
+                함수 작성시 고려사항
+                    -매개변수(parameter)가 있는가
+                    -리턴값(return)이 있는가
+            */
+
+            //함수 작성 예시
+            function test1(){
+                document.write("KOREA");
+            }
+
+            function test2(){
+                document.write("SEOUL");
+            }
+
+            //a -> 매개변수(parameter) : 값을 어디선가 입력받는 변수, 자료형이 없음   
+            function test3(a){
+                document.write(a);
+            }
+            /////////////////////////////////////////////////////
+            // Math.random() ->Math라는 객체의 random함수(기능)
+
+            //1. 전달값이 없는 경우 argument value
+            // Math.random() -> Math라는 객체의 random함수(기능)
+            test1(); //함수 호출
+            test1(); 
+            test2();
+            test1();
+
+            //2. 전달값이 있는 경우 
+            // Math.abs(-3)
+            test3(10);
+            test3(20);
+
+
+            
+        </script>
+    </body>
+</html>   
+ 
