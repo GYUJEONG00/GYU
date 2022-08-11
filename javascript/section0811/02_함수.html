@@ -1,0 +1,102 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>02_함수.html</title>
+        <style>
+        </style>
+    </head> 
+    <body>
+        <h3>사용자 정의 함수</h3>
+
+        <script>
+          // 4. 함수 리턴값이 있는 경우 (ex:-3을 매개변수로 주고 절대값 3리턴)
+
+          //    함수는 (작성된 실행문을 실행하고) 호출한 시점으로 되돌아옴(=return=함수종료)
+          //    리턴값 : 값을 가지고 호출한 시점으로 돌아오는것 
+          //             리턴값은 1개만 가능
+          //    형식   : return 값
+
+
+          function test1(){
+                document.write("SEOUL");
+                return; // 호출 시점으로 되돌아간다
+                        // 마지막 return은 생략가능
+          }        //함수 작성
+
+          function test2(a){
+                if(a<0){
+                    return;
+                }
+                document.write(a);
+          }
+
+          function test3(a,b){
+                let c=a+b;
+                return c; //c값을 리턴. 1개만 리턴 가능 
+                          //하나의 배열에 여러값 리턴해도됨 
+          }
+
+          function fact(f){
+                let sum=1;
+                for(let i=1; i<=f; i++){
+                sum=sum*i;
+                }
+                return sum;                     //함수내에 지역변수는 함수 빠져나가면 사라짐
+          }                                     //변수 선언위치와 리턴값 기재위치 조심
+
+          function leap(a){
+            if(a%4==0 && a%100!=0 ||a%400==0){
+                return true;
+            }else{
+                return false;
+            }
+          }
+          ///////////////////////////////////////////////////
+          test1(); //함수 호출
+          test2(3);
+          test2(-5);
+          document.write("<hr>");
+
+          let result=test3(6,7);
+          document.write(result);    //->변수값
+          document.write(13);        //->상수값
+          document.write(test3(8,9));//->함수의 리턴값
+          document.write("<hr>");
+
+          //문제1 ) 팩토리얼값을 구하시오 
+          let gop=fact(4);
+          document.write(gop+"<hr>");
+
+          //문제2 ) 윤년,평년인지 출력하시오
+          if(leap(2022)){
+            document.write("윤년");
+          }else{
+            document.write("평년");
+          }
+          document.write("<hr>");
+          ///////////////////////////////////////////////////
+          
+          //4. 재귀적 함수 호출 (내가 나를 호출->무한루프 조심)
+          //
+          document.write(test(4));  //3팩토리얼값 구하기
+
+          function test(a){
+            if(a==0){
+                return 1;
+            }else{
+                return a*test(a-1);
+            }
+          }
+
+          /*
+            3*test(3-1)
+                    2*test(2-1)
+                            1*test(0)
+                                   return1
+            ---------------->3*2*1*1-->리턴됨
+          */
+        </script>
+    </body>
+</html>   
+ 

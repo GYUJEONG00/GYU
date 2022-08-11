@@ -1,0 +1,42 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>05_함수.html</title>
+        <style>
+        </style>
+    </head> 
+    <body>
+        <h3>사용자 정의 함수</h3>
+
+        <script>
+            //현재 시각yyyy;mm;dd hh;mm  생년월일을 입력하세요
+            //(나이,띠, 계산+만나이)
+
+
+            const t = new Date();
+            
+
+            let cYear = t.getFullYear();
+            let cmonth = ("0"+(t.getMonth()+1)).slice(-2);
+            let cday = ("0"+(t.getDate())).slice(-2);
+            let chour = ("0"+(t.getHours())).slice(-2);
+            let cminute = ("0"+(t.getMinutes())).slice(-2);
+            let day=t.getDate()
+            let days=["일", "월", "화", "수", "목", "금", "토"];
+
+            let dayString = cYear+" : "+cmonth+" : "+cday+" ("+days[t.getDate()]+") ";
+            let timeString = chour+" : "+cminute;
+
+            let input =prompt("생년월일을 입력하세요.\n(ex : 19xx0101 형식으로 입력", "ㅁㄴㅇ");
+            //prompt("보여줄 메세지", "입력되어있는 값");
+            document.write(input+3); //입력 데이터를 문자열 인식->Number()로 변환하기
+            
+            
+
+            
+
+        </script>
+    </body>
+</html>   
+ 
