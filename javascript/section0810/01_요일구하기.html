@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>    
 <html lang="ko">                
     <head> 
@@ -110,4 +111,118 @@
         </script>
     </body>
 </html>   
+=======
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>01_요일구하기.html</title>
+        <style>
+        </style>
+    </head> 
+    <body>
+        <h3>요일구하는 프로그램</h3>
+
+        <script>
+            //
+            let cYear=2022, cMonth=8, cDate=10;
+            /*
+                (산술적인 의미로 체크용)
+                시나리오 
+                서기 1년 1월 1월 ~ 서기 2022년 8월 10일 =>총 일수
+                (총 일수%7) => 나머지 : 0123456 => 0:일 1:월 2:화 3:수 4:목 5:금 6:토
+                
+                1)  서기 1년 ~ 서기 2021년
+                    평년 +=365
+                    윤년 +=366
+
+                2)  1월 ~ 7월
+                    28 : 2                 => +=28(평년)
+                    29 : 2                 => +=29(윤년)
+                    30 : 4,6,9,11          => +=30
+                    31 : 1,3,5,7,8,10,12월 => +=31
+
+                3)  += 10
+
+
+            */
+                let hap=0;
+
+                //1단계 
+                for(let y=1; y<cYear; y++){
+                    if((y%4==0 && y%100!=0)|| y%400==0){
+                        hap+=366;
+                    }else{
+                        hap+=365;
+                    }
+                }
+                document.write(hap);
+                document.write("<hr>");
+            
+
+                //2단계 
+                //1~12[] * 2022
+                /////////////////////////////풀이 
+                let mon=[0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                //1~7월까지만 구해야함 
+                //mon[1]~mon[7]
+                //2월 일수가 결정이 안남 
+                 
+                if(cYear%4==0 && cYear%100!=0 || cYear%400==0){
+                    mon[2]=29;
+                }
+                
+                for(let m=1; m<cMonth; m++){
+                    hap=hap+mon[m];
+                }
+
+                hap=hap+cDate;
+                document.write(cYear+"년 "+cMonth+"월 "+cDate+"일<hr>");
+                document.write("총 일수 : "+hap);
+                document.write("<hr>");
+
+                //현재 뭘구하는지 인지하고 식 쓰기...2022년의 1~7월까지의 일수만 필요 
+                //for값으로 2022돌릴필요 없었음 
+                // let arraM=[];
+                // for(let y=1; y<cYear; y++){
+                //     for(let m=1; m<=12; m++){
+                //         switch(m){
+                //             case 1,3,5,7,8,10,12 : 
+                //             arraM[m]=arraM[m]+31;
+                //             break;
+                //             case 4,6,9,11 : 
+                //             arraM[m]=arraM[m]+30;
+                //             break;
+                //             case 2 : 
+                //                 if((y%4==0 && y%100!=0)|| y%400==0){
+                //                     arraM[m]=arraM[m]+29;  
+                //                 }else{
+                //                     arraM[m]=arraM[m]+28;  
+                //                 }break;
+                //         }
+                //     }
+                // }
+                // document.write(arraM);
+              
+                //3단계 아래 요일을 배열에 넣어서 출력할 수도 있음
+                switch(hap%7){
+                    case 0 : document.write("일요일"); break;
+                    case 1 : document.write("월요일"); break;
+                    case 2 : document.write("화요일"); break;
+                    case 3 : document.write("수요일"); break;
+                    case 4 : document.write("목요일"); break;
+                    case 5 : document.write("금요일"); break;
+                    case 6 : document.write("토요일"); break;
+                }
+                document.write("<hr>");
+
+                
+                
+                //문제)년도 cYear값의 띠를 출력하시오(12간지)
+                let animal=["원숭이", "닭", "개", "돼지", "쥐", "소", "호랑이", "토끼", "용", "뱀", "말", "양"];
+                document.write("띠 : "+ animal[cYear%12]);
+        </script>
+    </body>
+</html>   
+>>>>>>> b3a699f5785f4e69c612e1a5ee0b0cfe102f7bc8
  
