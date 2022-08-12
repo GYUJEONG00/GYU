@@ -30,9 +30,11 @@
 
             let input =prompt("생년월일을 입력하세요.\n(ex : 19xx0101 형식으로 입력", "ㅁㄴㅇ");
             //prompt("보여줄 메세지", "입력되어있는 값");
-            document.write(input+3); //입력 데이터를 문자열 인식->Number()로 변환하기
+            document.write(input); //입력 데이터를 문자열 인식->Number()로 변환하기
             
-            alert(input.slice(0,3));
+            input.slice(0,4) // 문자열 2000 00101
+            input.slice(4,6)
+            input.slice(6,4)
 
             
 

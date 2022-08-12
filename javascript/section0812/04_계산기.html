@@ -1,0 +1,176 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>04_계산기.html</title>
+        <style>
+            .txt {
+                text-align: right;
+                font-weight: bold;
+                --border: 1px solid darkcyan;
+                font-size: 30px;
+                color: black;
+                height: 30px;
+                background-color: aliceblue;
+                box-sizing : border-box;
+            }
+
+            input,button {
+                width: 100%;
+                height: 35px;
+                border: 0;
+                outline: 0;
+                
+            }
+
+            input:hover {
+                background-color: rgb(189, 189, 189);
+            
+            }
+
+            table, th, td {
+                border-collapse: collapse;
+            }
+            
+            table{
+                border: 1px solid darkcyan;
+            }
+
+            &-marquee {
+                font-weight: 600;
+                border: none;
+                overflow: hidden;
+                transition: 0.3s;
+
+                &:hover {
+                transform: scale(1.1);
+                }
+
+                span {
+                display: block;
+                padding: 0 20px;
+                animation: move-left 2s linear infinite;
+
+                &::after {
+                    position: absolute;
+                    content: attr(data-text);
+                    top: 0;
+                    left: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            }
+
+            
+        </style>
+    </head> 
+    <body>
+        <h3>미니 계산기</h3>    
+        
+        <form>
+            <span data-text="Marquee">Marquee</span>
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" name="result" 
+                               id="result" size="15" value="0" 
+                               readonly class="txt">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  7  " onclick="inputData(7)"></td>
+                    <td><input type="button" value="  8  " onclick="inputData(8)"></td>
+                    <td><input type="button" value="  9  " onclick="inputData(9)"></td>
+                    <td><input type="button" value="  ÷  " onclick="operator('/')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  4  " onclick="inputData(4)"></td>
+                    <td><input type="button" value="  5  " onclick="inputData(5)"></td>
+                    <td><input type="button" value="  6  " onclick="inputData(6)"></td>
+                    <td><input type="button" value="  *  " onclick="operator('*')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  1  " onclick="inputData(1)"></td>
+                    <td><input type="button" value="  2  " onclick="inputData(2)"></td>
+                    <td><input type="button" value="  3  " onclick="inputData(3)"></td>
+                    <td><input type="button" value="  -  " onclick="operator('-')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  0  " onclick="inputData(0)"></td>
+                    <td><input type="button" value="  .  "></td>
+                    <td><input type="button" value="  = " onclick="compute()"></td>
+                    <td><input type="button" value="  +  " onclick="operator('+')"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" value="  C  " onclick="cls()"></td>
+                    <td colspan="2"><input type="button" value="  ←  " onclick="backspace()"></td>
+                </tr>
+            </table>
+        </form>
+ 
+
+        <script>
+            // 1) C버튼을 클릭시 id=result의 0을 대입
+            function cls(){
+                document.getElementById("result").value = 0;
+            }
+  
+            //2) 숫자 버튼 클릭시 해당 숫자를 id=result에 대입
+            //전달받은 num변수값을 id=result에 대입
+            function inputData(su){
+                //document.getElementById("result").value += su; //문자형이라 +=su하면 글자가 누적돼서더해짐
+                //id=result값을 숫자형으로 변환("0123" -> 123)
+                document.getElementById("result").value = Number(document.getElementById("result").value += su);
+            }
+
+            //3)연산에 필요한 전역변수 3가지
+            let op;     //연산기호
+            let num1;   //사용자가 입력한 첫번째 수 
+            let num2;   //사용자가 입력한 두번째 수 
+
+            function operator(kind){
+                //4) 클릭한 연산기호를 전역변수 op에 저장
+                //alert(kind);
+                op=kind;
+
+                //5)현재 id=result가 가지고있는 값을 num1에 저장하기 
+                num1=Number(document.getElementById("result").value);
+
+                //6)연산자 다음에 들어갈 수를 입력받기 위해 id=result값을 초기화하기 
+                cls();
+            }
+
+            function compute(){
+                //실제 계산을 수행, 결과값을 출력
+
+                //7) 계산에 필요한 두번째 수를 num2에 저장하기 
+                num2=Number(document.getElementById("result").value);
+
+                //8) 
+                let text=
+                document.getElementById("result").value = eval(num1+op+num2);
+            }
+
+
+            function backspace(){
+                //let a=toString(document.getElementById("result").value);
+                let a=document.getElementById("result").value;
+                if(a.length==1){
+                    document.getElementById("result").value = 0;
+                }else{
+                    document.getElementById("result").value=a.substring(0, a.length-1);
+                }
+                //document.getElementById("result").value=a.slice(0, -1); //맨 마지막 글자 자르기
+                
+             
+
+            }
+
+        </script>
+    </body>
+</html>   
+ 

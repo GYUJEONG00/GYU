@@ -1,0 +1,71 @@
+<!DOCTYPE html>    
+<html lang="ko">                
+    <head> 
+        <meta charset="UTF-8">                       
+        <title>02_이벤트.html</title>
+    </head> 
+    <!--<body onload="alert('어서와')">-->
+    <body>
+        <h3>이벤트</h3>    
+
+        <form name="myform" id="myform" method="get" action="ok.jsp" onsubmit="return true">
+            <!--
+                onsubmit이벤트는 해당폼(myform)이 서버로 전송될때(ok.jsp찾아갈때)
+                리턴값이 true이면 해당폼이 전송되고 false이면 전송안됨
+
+            -->
+            <input type="button" value="버튼1" onclick="alert('어서와')">
+            <hr>
+            <input type="button" value="아이티윌" onclick="location.href='https://www.itwill.co.kr/'">
+            <hr>
+            <input type="button" value="마우스를 올려보세요" 
+                   onmouseover="alert('마우스over')"
+                   onmouseout="alert('마우스out')">
+            <hr>
+            <input type="text" onkeydown="alert('키보드 누름')" >
+            <textarea rows="5" cols="10" onkeydown="alert('키보드 누름')"></textarea>
+            <hr>
+            
+            <select onchange="alert('목록이 변경됨')">
+                <option>서울</option>
+                <option>부산</option>
+                <option selected>제주</option>
+            </select>
+            <hr>
+
+            <!--그 외 이벤트들 : https://www.w3schools.com/jsref/dom_obj_event.asp -->
+            <!--텍스트 입력상자에 커서가 들어왔을때 onfocus 이벤트-->
+            <input type="text"  onfocus="alert('커서들어옴')">
+            <hr>
+
+            <!--폼을 서버로 전송하는 컨트롤 요소들-->
+            <!--submit버튼 클릭시 form단위로 서버로 정보 전송-->
+            <!--서버로 해당폼을 전송할때 이벤트 onsubmit-->
+            <input type="submit" value="전송1">
+            <button>전송2</button>                                <!--기본속성이 submit-->
+            <input type="image" src="../../images/search.png">    <!--기본속성이 submit-->
+            
+
+        </form>
+
+
+
+
+        <script>
+            //참조 : https://www.w3schools.com/js/js_events.asp
+            /*
+                자바스크립트는 이벤트를 발생시키고 함수를 호출함으로써 실행함
+                기본 이벤트의 종류 
+
+                onchange	다른객체로 바뀌었을때
+                onclick	    마우스 클릭했을때
+                onmouseover	마우스가 올려졌을때
+                onmouseout	마우스가 나갔을때
+                onkeydown	키보드 관련 이벤트
+                onload	    문서<body>를 불러오는 작업이 끝났을때
+            */
+
+        </script>
+    </body>
+</html>   
+ 
